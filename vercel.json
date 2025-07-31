@@ -14,10 +14,10 @@
   ],
   "env": {
     "NODE_ENV": "production",
-    "ATLAS_URL": "@atlas_url",               
-    "SESSION_SECRET": "@session_secret",
-    "APP_NAME": "@app_name",
-    "HOST_URL": "@host_url",
-    "VERCEL_URL": "@vercel_url"
+    "ATLAS_URL": "ATLAS_URL",
+    "SESSION_SECRET": "SESSION_SECRET",
+    "APP_NAME": "APP_NAME",
+    "HOST_URL": "HOST_URL",
+    "VERCEL_URL": "VERCEL_URL"
   }
 }
