@@ -1,0 +1,33 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<title>SecureNote : Note</title>
+
+<div class="row gx-0">
+  <h1 class="p-0 text-break">Note #<%= id %></h1>
+</div>
+<div class="row gx-0">
+  <textarea
+    id="noteContent"
+    class="form-control bg-warning-subtle border-0 my-2"
+    rows="6"
+    disabled
+  >
+<%= content %></textarea
+  >
+</div>
+<div class="row gx-0">
+  <p class="col-12 bg-info-subtle rounded-2 p-2">
+    This note is destroyed. If needed, copy the contents of the note before
+    leaving this page.
+  </p>
+</div>
+<div class="row gx-0 mt-4">
+  <div class="p-0">
+    <button class="btn btn-primary btn-dark me-4" onclick="copyText()">
+      Copy Text
+    </button>
+    <a href="/" class="btn btn-primary add-btn">Create New Note</a>
+  </div>
+</div>
+
+<script src="/js/showNote.js"></script>

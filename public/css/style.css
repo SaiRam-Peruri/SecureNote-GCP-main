@@ -1,0 +1,78 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+}
+
+.navbar {
+  padding: 1rem;
+  background-color: crimson;
+  box-shadow: 0 -0.4rem 1rem black;
+  margin-bottom: 2rem;
+}
+
+.navbar-brand {
+  display: flex;
+  width: 10rem;
+  justify-content: space-between;
+  margin-right: 3rem;
+}
+
+.fa-lock {
+  color: white;
+  filter: drop-shadow(0 0 0.1rem black);
+  font-size: 2rem;
+  transition: 0.3s linear;
+  margin-right: 1rem;
+}
+
+.navbar-brand:hover > .fa-lock {
+  text-shadow: 0 0 2px #fe424d;
+}
+
+.brand-name {
+  transition: 0.3s linear;
+  font-size: 1.5rem;
+}
+
+.navbar-brand:hover > .brand-name {
+  font-weight: bold;
+}
+
+.nav-link {
+  color: white;
+  margin-left: 1rem;
+}
+
+.add-btn {
+  background-color: #ff2433;
+  border: none;
+  transition: 0.2s ease-in;
+}
+
+.add-btn:hover {
+  background-color: #ff2433;
+  box-shadow: 0 0 0.5rem #cb000e;
+  font-weight: 800;
+}
+
+.add-btn:active {
+  transition: none;
+  background-color: #fb0d1d !important;
+  box-shadow: 0 0 1rem #b0000c;
+}
+
+.btn-dark {
+  transition: 0.2s ease-in;
+  background-color: #333;
+}
+
+.btn-dark:hover {
+  background-color: #000;
+  box-shadow: 0 0 0.5rem #333;
+}

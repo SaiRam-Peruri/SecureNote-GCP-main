@@ -1,0 +1,68 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<title>SecureNote : Open Note</title>
+
+<% if(exists) {%> <% if(!destroyed) {%>
+
+<div class="row gx-0 mb-4">
+  <h1>Read and Destroy?</h1>
+  <p class="text-secondary text-break">
+    You're about to open the note with id #<%= id %>, after which it will be
+    destroyed automatically.
+  </p>
+</div>
+
+<form
+  action="/api/notes/<%= id %>"
+  method="POST"
+  class="needs-validation"
+  novalidate
+>
+  <% if(protected) {%>
+
+  <div class="row gx-0 mb-4">
+    <p>This note is encrypted. Enter the password to read it.</p>
+    <div class="col-12 col-md-6">
+      <input name="pass" type="password" class="form-control" required />
+    </div>
+  </div>
+
+  <% } %>
+  <div class="row gx-0">
+    <div>
+      <button type="submit" class="btn btn-primary add-btn me-4">
+        Yes, open the Note
+      </button>
+      <a href="/" class="btn btn-primary btn-dark">Not Now</a>
+    </div>
+  </div>
+</form>
+
+<br />
+
+<br />
+
+<% } } else { %>
+
+<div class="row gx-0">
+  <h1>Note not found</h1>
+  <p>
+    The note with id <i><u> #<%= id %></u></i> was not found.
+  </p>
+</div>
+
+<% } %> <% if(exists && destroyed) {%>
+
+<div class="row gx-0">
+  <h1>Note destroyed</h1>
+  <p class="text-secondary">
+    The note with id <i><u> #<%= id %></u></i> has been read and destroyed.
+  </p>
+  <p>
+    If you haven't read the note, then someone else has or it has expired. If
+    you forgot to copy it, ask the sender to recreate the note and send it
+    again.
+  </p>
+</div>
+
+<% } %>
