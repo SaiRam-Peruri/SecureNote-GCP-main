@@ -13,11 +13,11 @@
     }
   ],
   "env": {
-    "NODE_ENV": "production"
-  },
-  "functions": {
-    "index.js": {
-      "maxDuration": 30
-    }
+    "NODE_ENV": "production",
+    "ATLAS_URL": "@atlas_url",               
+    "SESSION_SECRET": "@session_secret",
+    "APP_NAME": "@app_name",
+    "HOST_URL": "@host_url",
+    "VERCEL_URL": "@vercel_url"
   }
 }
