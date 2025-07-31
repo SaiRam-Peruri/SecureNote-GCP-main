@@ -130,9 +130,51 @@ npm start
 
 ---
 
-## 📣 Final Note
+## � Vercel Deployment
 
-> SecureNote was not just built to showcase a MERN app, but to demonstrate how privacy, encryption, and modern web development can be integrated to create secure, real-world-ready software. Its modular design and scalability make it fit for future deployment on cloud platforms like **GCP**.
+This project is now configured for easy deployment on Vercel:
+
+### Prerequisites
+- A MongoDB Atlas database
+- A Vercel account
+
+### Deployment Steps
+
+1. **Clone and Install**
+   ```bash
+   git clone <your-repo-url>
+   cd SecureNote-GCP-main
+   npm install
+   ```
+
+2. **Environment Variables**
+   Set up the following environment variables in your Vercel dashboard:
+   - `ATLAS_URL` - Your MongoDB connection string
+   - `SESSION_SECRET` - A secure session secret
+   - `APP_NAME` - Your application name (e.g., "SecureNote")
+   - `HOST_URL` - Will be auto-set by Vercel
+   - `NODE_ENV` - Set to "production"
+
+3. **Deploy to Vercel**
+   ```bash
+   npm install -g vercel
+   vercel
+   ```
+   Or connect your GitHub repository to Vercel for automatic deployments.
+
+4. **Domain Configuration**
+   The app automatically detects Vercel's domain using `VERCEL_URL` environment variable.
+
+### Local Development
+```bash
+npm run dev
+```
+
+---
+
+## �📣 Final Note
+
+> SecureNote was not just built to showcase a MERN app, but to demonstrate how privacy, encryption, and modern web development can be integrated to create secure, real-world-ready software. Its modular design and scalability make it fit for future deployment on cloud platforms like **GCP** and **Vercel**.
 
 
 Let me know if you want this content formatted for a GitHub page, or if you'd like help preparing a `Dockerfile` or `cloudbuild.yaml` for GCP deployment.

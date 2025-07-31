@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Test passed successfuly\"",
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "build": "echo 'Build completed'",
+    "vercel-build": "echo 'Vercel build completed'"
   },
   "author": "",
   "license": "ISC",

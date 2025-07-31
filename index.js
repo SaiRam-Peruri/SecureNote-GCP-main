@@ -84,7 +84,12 @@ app.use((req, res, next) => {
   res.locals.deleted = req.flash("deleted");
   res.locals.appName = process.env.APP_NAME;
   res.locals.currUser = req.user;
-  res.locals.domain = `${process.env.HOST_URL}:${process.env.PORT}`;
+  // For Vercel deployment, use the request host or fallback to environment variables
+  res.locals.domain = process.env.VERCEL_URL 
+    ? `https://${process.env.VERCEL_URL}` 
+    : process.env.HOST_URL 
+    ? `${process.env.HOST_URL}:${process.env.PORT}`
+    : `${req.protocol}://${req.get('host')}`;
   next();
 });
 
@@ -105,10 +110,16 @@ app.use((err, req, res, next) => {
   });
 });
 
+// For local development
+if (process.env.NODE_ENV !== 'production') {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(
+      `Server is listening at ${process.env.HOST_URL}:${PORT}\n`
+    );
+  });
+}
 
-app.listen(process.env.PORT, '0.0.0.0', () => {
-  console.log(
-    `Server is listening at ${process.env.HOST_URL}:${process.env.PORT}\n`
-  );
-});
+// Export for Vercel
+module.exports = app;
 
